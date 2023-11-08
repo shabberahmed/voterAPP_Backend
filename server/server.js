@@ -8,6 +8,10 @@ const app=express()
 
 app.use(express.json())
 conn()
-app.use(cors())
+app.use(cors({
+  origin: 'http://localhost:3000',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+}));
+
 app.use(route)
 app.listen(PORT,()=>console.log(`server started on port number ${PORT}`))
