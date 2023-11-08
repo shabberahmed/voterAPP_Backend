@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import AuthModel from "../models/AuthModel.js";
 import UserModel from "../models/UserModel.js";
 import bcrypt from 'bcrypt'
+import express from 'express'
 import Jwt from 'jsonwebtoken'
 const secretKey = 'your-secret-key';
 
@@ -219,7 +220,12 @@ catch(err){
 //     res.status(500).json({ error: err.message, msg: 'An error occurred' });
 //   }
 // };
+const app=express()
 export const data = async (req, res) => {
+ res.setHeader(app.use(cors({
+  origin: '*',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+})))
   const {  vid, partNo,house } = req.body;
   const collection = mongoose.connection.db.collection('voterdatas');
 
