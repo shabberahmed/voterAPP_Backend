@@ -5,6 +5,8 @@ import bcrypt from 'bcrypt'
 import express from 'express'
 import Jwt from 'jsonwebtoken'
 const secretKey = 'your-secret-key';
+import cors from 'cors'
+
 
 export const userSignUp = async (req, res) => {
   const { name, email, password, mobile, oid } = req.body; // dailyLocations is allowed to be empty or not provided
