@@ -57,7 +57,7 @@ try{
 
     if(checkPassword){
       const token=Jwt.sign({email},secretKey,{expiresIn:'10h'})
-      res.json({m:"ok",token:token,role:'user',id:ifUser.id})
+      res.json({m:"ok",token:token,role:'user',id:ifUser.id,user:ifUser.name})
     }
     else{
       res.json({m:"wrong password "})

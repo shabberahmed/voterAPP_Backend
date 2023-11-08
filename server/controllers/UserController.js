@@ -220,7 +220,7 @@ catch(err){
 //   }
 // };
 export const data = async (req, res) => {
-  const {  vid, partNo,house } = req.body;
+  const {  vid, partNo,house } = req.params;
   const collection = mongoose.connection.db.collection('voterdatas');
 
   try {
