@@ -9,6 +9,6 @@ route.post('/user/signup',userSignUp)
 route.post('/post/form',postData)
 route.get('/getusers/:id',getMyUsers)
 route.get('/voter',voter)
-route.get('/voterdata/:vid/:partNo/:house',data)
+route.post('/voterdata',data)
 route.get("/form/:id",formData)
 export default route
